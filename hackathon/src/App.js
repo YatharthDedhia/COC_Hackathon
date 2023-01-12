@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  Opening
-  // Home,
+  Opening,
+  Home
   // Profile,
   // Leave,
   // Guest,
@@ -17,8 +17,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Opening />} />
-          {/* <Route exact path="/home" element={<Home />} />
-          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/home" element={<Home />} />
+          {/* <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/leave" element={<Leave />} />
           <Route exact path="/guest" element={<Guest />} />
           <Route exact path="/landing" element={<Landing />} /> */}
