@@ -21,7 +21,7 @@ const menu = [
         item: 'Bread-Butter',
         date: '22/11/2022',
         ingredients: 'Mushroom / Garlic / Veggies'
-    }
+    },
 ];
 
 const MenuPrint = () => {
@@ -31,9 +31,9 @@ const MenuPrint = () => {
                 <div class="menu-list-1">
                     <div class="dish-name">
                         <p>{food.date}</p>
-                        <h4>{food.item}</h4>
                         <p>{food.type}</p>
-                        <p className='ingredients'>{food.ingredients}</p>
+                        <h4>{food.item}</h4>
+                        {/* <p className='ingredients'>{food.ingredients}</p> */}
                     </div>
                 </div>
             </div>
