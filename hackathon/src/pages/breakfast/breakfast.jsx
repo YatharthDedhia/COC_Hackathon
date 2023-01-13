@@ -2,6 +2,7 @@ import './css/meals.css'
 
 const Breakfast = () => {
     return (
+    <div className="meals-body">
          <div className="contact_form">
         <div className="formulario rizz">
             <h1>Breakfast</h1>
@@ -44,6 +45,7 @@ const Breakfast = () => {
                 </button>
             </form>
         </div>
+    </div>
     </div>
     );
 };
