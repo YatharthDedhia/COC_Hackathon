@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React, { useState, useEffect } from "react";
 // import { Form, Button, Row, Col } from "react-bootstrap";
 // import { useDispatch, useSelector } from "react-redux";
@@ -112,7 +111,6 @@
 // };
 
 // export default ProfileView;
-=======
 import React, { useState } from 'react';
 import './css/profile.css'
 import './css/menubox.css'
@@ -233,4 +231,3 @@ const Profile = () => {
     );
 };
 export default Profile;
->>>>>>> 7c3afb8a0b094ed1794be33923d55624515806fd
