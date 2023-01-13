@@ -1,0 +1,9 @@
+.Leave {
+    text-align: center;
+}
+
+.MainContent {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

@@ -1165,3 +1165,18 @@ p.center-date {
 .container3 {
 	width: 300px;
 }
+
+.display-content{
+	line-height: 2;
+}
+
+.credentials{
+	font-size: 1.3rem;
+	color:#fff;
+}
+
+.profile{
+	position:relative;
+	right:-2rem;
+}
+
