@@ -3,17 +3,26 @@ import {
   Opening,
   Home,
    Profile,
-  // Leave,
+  Leave,
   // Guest,
    Landing,
    Admin,
    Lunch,
    Breakfast,
-   Dinner
+   Dinner,
 } from './pages'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-
+import { AccountBox } from './pages/landing/accountBox';
+import styled from "styled-components";
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 const App = () => {
   return (
     <div className="App">
@@ -25,11 +34,13 @@ const App = () => {
            <Route exact path="/profile" element={<Profile />} />
           {/* <Route exact path="/leave" element={<Leave />} />
           <Route exact path="/guest" element={<Guest />} /> */}
-          <Route exact path="/landing" element={<Landing />} /> 
+          {/* <Route exact path="/landing" element={<Landing />} />  */}
+          <Route exact path="/landing" element={<AppContainer><AccountBox /></AppContainer>} /> 
           <Route exact path="/admin" element={<Admin />} />
           <Route exact path="/breakfast" element={<Breakfast />} />
           <Route exact path="/lunch" element={<Lunch />} />
           <Route exact path="/dinner" element={<Dinner />} />
+          <Route exact path="/leave" element={<Leave />} />
         </Routes>
       </BrowserRouter>
       {/* </React.StrictMode> */}
