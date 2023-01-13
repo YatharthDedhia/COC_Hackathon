@@ -52,10 +52,10 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 75px;
+    gap: 80px;
     list-style: none;
     position: relative;
-    left: 980px;
+    left: 900px;
 }
 
 a {
