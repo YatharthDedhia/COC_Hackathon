@@ -27,6 +27,7 @@ nav{
     justify-content:space-between;
     align-items:center;
 }
+
 .nav-main{
     display:flex;
     gap:32px;
@@ -126,10 +127,8 @@ a:hover{
 .menu{
   display:none;
 }
-/** not yet responsive
 
-/** dark mode switch
-**/
+
 @media only screen and (max-width: 700px) {
   .nav-links, .cta{
     display:none;
