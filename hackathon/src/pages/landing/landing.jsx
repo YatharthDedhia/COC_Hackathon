@@ -10,12 +10,10 @@ const signupButton = document.getElementById('signup-button'),
 /**
  * Add event listener to the "Sign Up" button
  */
-// signupButton.addEventListener('click', () => {
-//   userForms.classList.remove('bounceRight')
-//   userForms.classList.add('bounceLeft')
-//   classNames('bounce', { Left: true }); 
-// classNames('bounce', { Right: false });
-// }, false)
+signupButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceRight')
+  userForms.classList.add('bounceLeft')
+}, false)
 
 
 
@@ -23,19 +21,11 @@ const signupButton = document.getElementById('signup-button'),
  * Add event listener to the "Login" button
  */
 
-// loginButton.addEventListener('click', () => {
-//   userForms.classList.remove('bounceLeft')
-//   userForms.classList.add('bounceRight')
-//   userForms.classNames('bounce', { Right: true }); 
-// userForms.classNames('bounce', { Left: false });
-// }, false)
-// const handleClick = event => {
-  
-//   setIsActive(current => !current);
-// };
+loginButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceLeft')
+  userForms.classList.add('bounceRight')
+}, false)
 const Landing=()=>{
-  
-//   const [isActive, setIsActive] = useState(false);
     return(
       
       <div>
