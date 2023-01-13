@@ -9,8 +9,8 @@ const Opening = () => {
 				<div className="untitled__slide">
 					<div className="untitled__slideBg"></div>
 					<div className="untitled__slideContent">
-						<span>Good</span>
-						<span>Luck</span>
+						<span>Good Food</span>
+						<span>Good Mood</span>
 						<a className="button" href="/" target="/black">Sign Up</a>
 					</div>
 				</div>
@@ -18,24 +18,24 @@ const Opening = () => {
 					<div className="untitled__slideBg"></div>
 					<div className="untitled__slideContent">
 
-						<span>We Got</span>
-						<span>This Covered</span>
+						<span>Nourish To Flourish</span>
+						{/* <span>This Covered</span> */}
 						<a className="button" href="/" target="/black">Sign Up</a>
 					</div>
 				</div>
 				<div className="untitled__slide">
 					<div className="untitled__slideBg"></div>
 					<div className="untitled__slideContent">
-						<span> An Online Test Platform</span>
-						<span>for All your Competitive Exams</span>
+						<span> Savor The Flavour</span>
+						<span>With our Special Meals</span>
 						<a className="button" href="/" target="/black">Sign Up</a>
 					</div>
 				</div>
 				<div className="untitled__slide">
 					<div className="untitled__slideBg"></div>
 					<div className="untitled__slideContent">
-						<span>Today you show this Test</span>
-						<span>who the Boss is</span>
+						<span>Count the Memories</span>
+						<span>Not the Calories</span>
 						<a className="button" href="/" target="/black">Sign Up</a>
 					</div>
 				</div>
