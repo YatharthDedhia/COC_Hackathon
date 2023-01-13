@@ -269,7 +269,7 @@ router.route('/meallog/guest').post((request,response)=>{
 
     let guest = {... request.body}
     Db.displayMealLogSingleGuest(guest).then(result =>{
-        response.json(result[0]);
+        response.json(result);
     })
 })
 
@@ -277,7 +277,7 @@ router.route('/meallog/student').post((request,response)=>{
 
     let student = {... request.body}
     Db.displayMealLogSingleMessStudent(student).then(result =>{
-        response.json(result[0]);
+        response.json(result);
     })
 })
 
@@ -285,7 +285,7 @@ router.route('/menu/date').post((request,response)=>{
 
     let date = {... request.body}
     Db.displayMenuDate(date).then(result =>{
-        response.json(result[0]);
+        response.json(result);
     })
 })
 
@@ -293,7 +293,7 @@ router.route('/menu/meal').post((request,response)=>{
 
     let meal = {... request.body}
     Db.displayMenuMeal(meal).then(result =>{
-        response.json(result[0]);
+        response.json(result);
     })
 })
 
@@ -301,11 +301,270 @@ router.route('/overhead/date').post((request,response)=>{
 
     let date = {... request.body}
     Db.displayOverheadDate(date).then(result =>{
-        response.json(result[0]);
+        response.json(result);
+    })
+})
+
+router.route('/overhead/month').post((request,response)=>{
+
+    let month = {... request.body}
+    Db.displayOverheadMonth(month).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/overhead/type').post((request,response)=>{
+
+    let type = {... request.body}
+    Db.displayOverheadType(type).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/student').post((request,response)=>{
+
+    let studentinfo = {... request.body}
+    Db.displaySingleStudent(studentinfo).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/student').get((request,response)=>{
+    Db.displayStudentsInfo().then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/ingredient').get((request,response)=>{
+    Db.displayTotalIngredients().then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/overhead').get((request,response)=>{
+    Db.displayTotalOverheads().then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/waste').get((request,response)=>{
+    Db.displayTotalWaste().then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/waste/date').post((request,response)=>{
+    let date = {... request.body}
+    Db.displayWasteDate(date).then(result =>{
+        response.json(result);
     })
 })
 
 
+router.route('/waste/month').post((request,response)=>{
+    let month = {... request.body}
+    Db.displayWasteMonth(month).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/login').post((request,response)=>{
+    let logininfo = {... request.body}
+    Db.login(logininfo).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/update/meal/student').post((request,response)=>{
+    let mealinfo = {... request.body}
+    Db.updateSingleMealOfStudent(mealinfo).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/messid').post((request,response)=>
+{
+    let messid = {... request.body};
+    Db.addToMessIdPic(messid).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/deduct').post((request,response)=>
+{
+    let date = {... request.body};
+    Db.deductBalance(date).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/add').post((request,response)=>
+{
+    let studentinfo = {... request.body};
+    Db.addBalance(studentinfo).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/day/meals').post((request,response)=>
+{
+    let mealsperday = {... request.body};
+    Db.calculateMealCountPerDate(mealsperday).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/changebalance').get((request,response)=>{
+    Db.changeBalance().then(result =>{
+        response.json(result);
+    })
+})
+
+
+router.route('/holdpermonth').post((request,response)=>
+{
+    let months = {... request.body};
+    Db.displayHoldLogPerMonth(months).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/not/holdlog').get((request,response)=>{
+    Db.displayNotInHoldLogOnList().then(result =>{
+        response.json(result);
+    })
+})
+
+
+router.route('/holdlog').post((request,response)=>
+{
+    let holdloginfo = {... request.body};
+    Db.insertHoldLog(holdloginfo).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/monthlyavg/alloverheadtype').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgCostAllOverheadType(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/monthlyavg/allingredient').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgCostPerMealAllIngredient(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+router.route('/monthlyavg/permealalloverheadtype').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgCostPerMealAllOverheadType(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/monthlyavg/permealperoverheadtype').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgCostPerMealPerOverheadType(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/monthlyavg/peroverheadtype').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgCostPerOverheadType(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/monthlyavg/wastepermeal').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgWastePerMeal(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/monthlyavg/weightperingredient').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.monthlyAvgWeightPerIngredient(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/totalmonthly/ingredientamount').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.totalMonthlyAmountUsedIngredient(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/totalmonthly/ingredientcost').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.totalMonthlyCostAllIngredients(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/totalmonthly/alloverheadscost').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.totalMonthlyCostAllOverheads(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/totalmonthly/ingredientcost').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.totalMonthlyCostIngredient(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/totalmonthly/overheadcost').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.totalMonthlyCostOverheads(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
+
+router.route('/totalmonthly/waste').post((request,response)=>
+{
+    let info = {... request.body};
+    Db.totalMonthlyWaste(info).then(result=>
+        {
+            response.status(201).json(result);
+        })
+})
 
 router.use((request, response, next)=> { //middleware(used for authentication)
     console.log("middleware");
