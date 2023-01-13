@@ -1,0 +1,139 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.header span {
+    color: #ffcc00;
+    line-height: 30px;
+    text-align: centre;
+}
+
+.heading-1{
+    padding-top:35px;
+}
+hr{
+    position:relative;
+    top:15px;
+}
+
+.header {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.header h1 {
+    color: #333;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header hr {
+    background-color: #333333;
+    height: 2px;
+    width: 100px;
+    border: none;
+    margin-top: 10px;
+}
+
+.menu-food .menu-food-pennal li.food-spicy,
+.menu-food .menu-food-pennal li:hover {
+    padding: 12px 0;
+    position: relative;
+    color: #fff;
+    background-color: #ffcc00;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 10px;
+    transition: all 500ms ease-in-out;
+}
+
+.menu-food .menu-food-pennal {
+    padding: 0;
+    margin: 10px;
+    height: 100px;
+    border-bottom: 3px solid #ffcc00;
+}
+
+.menu-food .menu-food-pennal li {
+    float: left;
+    list-style-type: none;
+    text-align: center;
+    width: 10%;
+    color: #666;
+    padding: 25px 0;
+    font-size: 15px;
+    display: block;
+    cursor: pointer;
+    height: 98px;
+}
+
+.hinh-1 {
+    border-radius: 50%;
+}
+
+.menu-list-1 .dish-name {
+    padding: 6px 0 0 10px;
+    overflow: hidden;
+}
+
+.dishs-price {
+    color: #f7b527;
+    font-weight: 600;
+    font-size: 1.2857142857142858em;
+}
+
+.menu-list-1 {
+    margin-bottom: 40px;
+    min-height: 110px;
+    padding-bottom: 40px;
+    border-bottom: 1px dashed #ccc;
+
+}
+
+.food-list {
+    padding-top: 30px;
+    background-color: #fff;
+
+}
+
+.mon-1 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.menu-food .menu-food-pennal .food-1 {
+    background-image: url(https://www.multipurposethemes.com/html-templates/morsel/images/food_icons.png);
+    height: 46px;
+    width: 46px;
+    background-repeat: no-repeat;
+    transition: all ease 0.2s;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+menu-food .menu-food-pennal li span {
+    display: none;
+}
+
+.menu-food .menu-food-pennal .food-1 {
+    position: relative;
+    left: 2rem;
+}
+.col-3-mon-1{
+width:280px;
+float:left;
+margin:10px;
+}
