@@ -1,4 +1,3 @@
-import './Guest.css'
 import { useState } from 'react';
 
 const Guest= () =>{
@@ -70,7 +69,7 @@ const errorMessage = () => {
 return (
 	<div className="form">
 	<div>
-		<h1>Guest Registration</h1>
+		<h1>User Registration</h1>
 	</div>
 
 	{/* Calling to the methods */}
@@ -81,20 +80,20 @@ return (
 
 	<form>
 		{/* Labels and inputs for form data */}
-		<label className="label">Firstname</label>
+		<label className="label">Name</label>
 		<input onChange={handleName} className="input"
 		value={name} type="text" />
 
-		<label className="label">Lastname</label>
+		<label className="label">Email</label>
 		<input onChange={handleEmail} className="input"
-		value={email} type="text" />
+		value={email} type="email" />
 
-		<label className="label">Phonenumber</label>
+		<label className="label">Password</label>
 		<input onChange={handlePassword} className="input"
-		value={password} type="number" />
+		value={password} type="password" />
 
 		<button onClick={handleSubmit} className="btn" type="submit">
-		Add a Guest
+		Submit
 		</button>
 	</form>
 	</div>

@@ -3,8 +3,8 @@ import {
   Opening,
   Home,
    Profile,
-  // Leave,
-  // Guest,
+  Leave,
+  Guest,
    Landing
 } from './pages'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -19,8 +19,8 @@ const App = () => {
           <Route exact path="/" element={<Opening />} />
           <Route exact path="/home" element={<Home />} />
            <Route exact path="/profile" element={<Profile />} />
-          {/*<Route exact path="/leave" element={<Leave />} />
-          <Route exact path="/guest" element={<Guest />} /> */}
+          <Route exact path="/leave" element={<Leave />} />
+          <Route exact path="/guest" element={<Guest />} />
           <Route exact path="/landing" element={<Landing />} /> 
         </Routes>
       </BrowserRouter>
