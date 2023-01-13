@@ -700,7 +700,8 @@ p.center-date {
 
 .profile {
 	height: 500px;
-	top: -15px;
+	/* top: -15px; */
+	top: 75px;
 	border-radius: 6px;
 	position: relative;
 	right: -500px;
@@ -1177,6 +1178,7 @@ p.center-date {
 
 .profile{
 	position:relative;
-	right:-2rem;
+	right:-20rem;
+	width: 350px;
 }
 

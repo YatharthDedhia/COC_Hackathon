@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import './css/navbar.css';
 import './css/menu.css';
 
+import axios from 'axios';
+
+const url = "https://viveksem3apiv4.azurewebsites.net/api/menu";
+
 const menu = [
     {
         type: 'Lunch',
@@ -26,15 +30,39 @@ const menu = [
 ];
 
 const MenuPrint = () => {
+
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => {
+
+                setFood(response.data[0])
+                console.log(food)
+                setFoodDate(response.data[0][0].Date)
+                setFoodIng(response.data[0][0].Ingredients)
+                setFoodItem(response.data[0][0].ItemName)
+                setFoodType(response.data[0][0].MealType)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    })
+
+    const [fooddate, setFoodDate] = useState('');
+    const [foodtype, setFoodType] = useState('');
+    const [fooditem, setFoodItem] = useState('');
+    const [fooding, setFoodIng] = useState('');
+    const [food, setFood] = useState('');
+
     return (
-        menu.map((food) => (
+        food.length.map((food) => (
             <div class="col-3-mon-1">
                 <div class="menu-list-1">
                     <div class="dish-name">
-                        <p>{food.date}</p>
-                        <p>{food.type}</p>
-                        <h4>{food.item}</h4>
-                        {/* <p className='ingredients'>{food.ingredients}</p> */}
+                        <p>{fooddate}</p>
+                        <p>{foodtype}</p>
+                        <h4>{fooditem}</h4>
+                        <p className='ingredients'>{fooding}</p>
                     </div>
                 </div>
             </div>

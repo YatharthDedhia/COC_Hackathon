@@ -1,37 +1,7 @@
 import React, { useState } from 'react';
 import './css/profile.css'
 import './css/menubox.css'
-
-
-
-const Header_Menu = () => {
-    return (
-        <header class="block">
-            <ul class="header-menu horizontal-list">
-                <li>
-                    <a class="header-menu-tab" href="#1"><span class="icon entypo-cog scnd-font-color"></span>Settings</a>
-                </li>
-                <li>
-                    <a class="header-menu-tab" href="#2"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
-                </li>
-                <li>
-                    <a class="header-menu-tab" href="#3"><span class="icon fontawesome-envelope scnd-font-color"></span>Questions</a>
-                    <a class="header-menu-number" href="#4">5</a>
-                </li>
-                <li>
-                    <a class="header-menu-tab" href="#5"><span class="icon fontawesome-star-empty scnd-font-color"></span>Solutions</a>
-                </li>
-            </ul>
-            <div class="profile-menu">
-                <p>Me <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
-                <div class="profile-picture small-profile-picture">
-                    {/* <img src={`data:image/png;base64,${pic}`} /> */}
-                </div>
-            </div>
-        </header>
-
-    );
-};
+import './css/id.css'
 
 const Profile_Block = () => {
     return (
@@ -43,76 +13,55 @@ const Profile_Block = () => {
             <h1 class="user-name">Manav Shah</h1>
             <ul class="profile-options horizontal-list">
                 <div class="display-content">
-                <div class="credentials">Room No : </div>
-                <div class="credentials">Balance : </div>
-                <div class="credentials">No. of guests : </div>
-                <div class="credentials">No of Meal : </div>
+                    <div class="credentials">Room No : </div>
+                    <div class="credentials">Balance : </div>
+                    <div class="credentials">No. of guests : </div>
+                    <div class="credentials">No. of Meal : </div>
                 </div>
             </ul>
         </div>
     );
 };
 
-// const Line_Graph = () => {
-//     return (
-//         <div class="line-chart-block block clear">
-//             {/* <!-- LINE CHART BLOCK (LEFT-CONTAINER) --> */}
-//             <div class="line-chart">
-//                 {/* <!-- LINE-CHART by @kseso https://codepen.io/Kseso/pen/phiyL --> */}
-//                 <div class='grafico'>
-//                     <ul class='eje-y'>
-//                         <li data-ejeY='30'></li>
-//                         <li data-ejeY='20'></li>
-//                         <li data-ejeY='10'></li>
-//                         <li data-ejeY='0'></li>
-//                     </ul>
-//                     <ul class='eje-x'>
-//                         <li>Apr</li>
-//                         <li>May</li>
-//                         <li>Jun</li>
-//                     </ul>
-//                     <span data-valor='25'>
-//                         <span data-valor='8'>
-//                             <span data-valor='13'>
-//                                 <span data-valor='5'>
-//                                     <span data-valor='23'>
-//                                         <span data-valor='12'>
-//                                             <span data-valor='15'>
-//                                             </span></span></span></span></span></span></span>
-//                 </div>
-//                 {/* <!-- END LINE-CHART by @kseso https://codepen.io/Kseso/pen/phiyL --> */}
-//                 <ul class="time-lenght horizontal-list">
-//                     <li><a class="time-lenght-btn" href="#14">Week</a></li>
-//                     <li><a class="time-lenght-btn" href="#15">Month</a></li>
-//                     <li><a class="time-lenght-btn" href="#16">Year</a></li>
-//                 </ul>
-//                 <ul class="month-data clear">
-//                     <li>
-//                         <p>APR<span class="scnd-font-color"> 2013</span></p>
-//                         <p><span class="entypo-plus increment"> </span>21<sup>%</sup></p>
-//                     </li>
-//                     <li>
-//                         <p>MAY<span class="scnd-font-color"> 2013</span></p>
-//                         <p><span class="entypo-plus increment"> </span>48<sup>%</sup></p>
-//                     </li>
-//                     <li>
-//                         <p>JUN<span class="scnd-font-color"> 2013</span></p>
-//                         <p><span class="entypo-plus increment"> </span>35<sup>%</sup></p>
-//                     </li>
-//                 </ul>
-//             </div>
-//         </div>
-//     );
-// };
+const Id = () => {
+    return (
+        <div className='id-body'>
+            <div class="card">
+                <div class="img-bx">
+                    <img src="https://previews.123rf.com/images/triken/triken1608/triken160800029/61320775-male-avatar-profile-picture-default-user-avatar-guest-avatar-simply-human-head-vector-illustration-i.jpg" width="300" height="300" alt="img" />
+                </div>
+                <div class="content">
+                    <div class="detail">
+                        <h2>Manav Shah<br /></h2>
+                        <ul class="sci">
+                            <li class='credentials'>
+                                Contact No.: 76832924
+                            </li>
+                            <li class='credentials'>
+                                Room No.: 55
+                            </li>
+                            <li class='credentials'>
+                                Branch: CE
+                            </li>
+                            <li class='credentials'>
+                                Mess ID No: 66
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 const Profile = () => {
     return (
         <div className='main-container'>
 
-            <Header_Menu />
+            {/* <Header_Menu /> */}
             <div className='container3'>
                 <Profile_Block />
-                {/* <Line_Graph /> */}
+                <Id />
             </div>
         </div>
     );
