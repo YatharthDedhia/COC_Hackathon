@@ -1,57 +1,19 @@
-// import React from "react";
-import React, { useState } from 'react';
-import Popup from 'reactjs-popup';
-import './css/profile.css'
-import './css/menubox.css'
-import './css/line-chart.css'
-const Header_Menu = () => {
-  return (
-    <header class="block">
-      <ul class="header-menu horizontal-list">
-        <li>
-          <a class="header-menu-tab" href="#1"><span class="icon entypo-cog scnd-font-color"></span>Settings</a>
-        </li>
-        <li>
-          <a class="header-menu-tab" href="#2"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
-        </li>
-        <li>
-          <a class="header-menu-tab" href="#3"><span class="icon fontawesome-envelope scnd-font-color"></span>Questions</a>
-          <a class="header-menu-number" href="#4">5</a>
-        </li>
-        <li>
-          <a class="header-menu-tab" href="#5"><span class="icon fontawesome-star-empty scnd-font-color"></span>Solutions</a>
-        </li>
-      </ul>
-      <div class="profile-menu">
-        <p>Me <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
-        <div class="profile-picture small-profile-picture">
-          <img width="40px" alt="Anne Hathaway picture" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" />
-        </div>
-      </div>
-    </header>
+import React, { useState, useEffect } from "react";
+import { Form, Button, Row, Col } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import Message from "../components/message";
+import Loader from "../components/loader";
+import { getUserDetails, updateUserProfile } from "../actions/userActions";
+import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
 
-  );
-};
+const ProfileView = ({ history }) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState(null);
 
-const Profile_Block = () => {
-  return (
-    <div class="profile block">
-      <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
-      <div class="profile-picture big-profile-picture clear">
-        <img width="150px" alt="Anne Hathaway picture" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" />
-      </div>
-      <h1 class="user-name">Manav Shah</h1>
-      <div class="profile-description">
-        <p class="scnd-font-color">DSA GOD</p>
-      </div>
-      <ul class="profile-options horizontal-list">
-        <li><a class="comments" href="#40"><p><span class="icon fontawesome-comment-alt scnd-font-color"></span>69</p></a></li>
-        <li><a class="views" href="#41"><p><span class="icon fontawesome-eye-open scnd-font-color"></span>420</p></a></li>
-        <li><a class="likes" href="#42"><p><span class="icon fontawesome-heart-empty scnd-font-color"></span>-69</p></a></li>
-      </ul>
-    </div>
-  );
-};
+  const dispatch = useDispatch();
 
 const Line_Graph = () => {
   return (
@@ -105,16 +67,68 @@ const Line_Graph = () => {
   );
 };
 
-const Profile = () => {
   return (
-    <div className='main-container'>
+    <Row>
+      <Col md={3}>
+        <h2>Profile</h2>
+        {message && <Message variant="danger">{message}</Message>}
 
-      <Header_Menu />
-      <div className='container3'>
-        <Profile_Block />
-        <Line_Graph />
-      </div>
-    </div>
+        {success && <Message variant="success">Profile Updated</Message>}
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant="danger">{error}</Message>
+        ) : (
+          <Form onSubmit={submitHandler}>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="Enter name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="email">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="confirmPassword">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Button type="submit" variant="primary">
+              Update
+            </Button>
+          </Form>
+        )}
+      </Col>
+      
+    </Row>
   );
 };
-export default Profile;
+
+export default ProfileView;

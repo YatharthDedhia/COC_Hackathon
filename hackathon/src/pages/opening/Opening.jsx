@@ -11,7 +11,7 @@ const Opening = () => {
 					<div className="untitled__slideContent">
 						<span>Good Food</span>
 						<span>Good Mood</span>
-						<a className="button" href="/" target="/black">Sign Up</a>
+						<a className="button" href="/landing" target="/black">Sign Up</a>
 					</div>
 				</div>
 				<div className="untitled__slide">
@@ -20,7 +20,7 @@ const Opening = () => {
 
 						<span>Nourish To Flourish</span>
 						{/* <span>This Covered</span> */}
-						<a className="button" href="/" target="/black">Sign Up</a>
+						<a className="button" href="/landing" target="/black">Sign Up</a>
 					</div>
 				</div>
 				<div className="untitled__slide">
@@ -28,7 +28,7 @@ const Opening = () => {
 					<div className="untitled__slideContent">
 						<span> Savor The Flavour</span>
 						<span>With our Special Meals</span>
-						<a className="button" href="/" target="/black">Sign Up</a>
+						<a className="button" href="/landing" target="/black">Sign Up</a>
 					</div>
 				</div>
 				<div className="untitled__slide">
@@ -36,7 +36,7 @@ const Opening = () => {
 					<div className="untitled__slideContent">
 						<span>Count the Memories</span>
 						<span>Not the Calories</span>
-						<a className="button" href="/" target="/black">Sign Up</a>
+						<a className="button" href="/landing" target="/black">Sign Up</a>
 					</div>
 				</div>
 			</div>
