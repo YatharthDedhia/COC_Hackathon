@@ -149,16 +149,18 @@ router.route('/menu').get((request,response)=>{
     })
 })
 
-router.route('/guestbooking').get((request,response)=>{
+router.route('/guestbooking').post((request,response)=>{
     
-    Db.displayAllRequestGuestBooking().then(result =>{
+    let date = {... request.body}
+    Db.displayAllRequestGuestBooking(date).then(result =>{
         response.json(result[0]);
     })
 })
 
-router.route('/balance').get((request,response)=>{
+router.route('/balance').post((request,response)=>{
     
-    Db.displayBalanceOfStudent().then(result =>{
+    let studentid = {... request.body};
+    Db.displayBalanceOfStudent(studentid).then(result =>{
         response.json(result[0]);
     })
 })
@@ -179,42 +181,48 @@ router.route('/deactivated').get((request,response)=>{
 
 router.route('/guests').get((request,response)=>{
     
+
     Db.displayGuestsInfo().then(result =>{
         response.json(result[0]);
     })
 })
 
-router.route('/guestinfo').get((request,response)=>{
+router.route('/guest/info').post((request,response)=>{
     
-    Db.displayGuestInfo().then(result =>{
+    let name = {... request.body}
+    Db.displayGuestInfo(name).then(result =>{
         response.json(result[0]);
     })
 })
 
-router.route('/student/guest').get((request,response)=>{
+router.route('/student/guest').post((request,response)=>{
     
-    Db.displayStudentsGuest().then(result =>{
+    let studentid = {... request.body}
+    Db.displayStudentsGuest(studentid).then(result =>{
         response.json(result[0]);
     })
 })
 
-router.route('/ingredient/name').get((request,response)=>{
+router.route('/ingredient/name').post((request,response)=>{
     
-    Db.displayIngredientName().then(result =>{
+    let ingredient = {... request.body}
+    Db.displayIngredientName(ingredient).then(result =>{
         response.json(result[0]);
     })
 })
 
-router.route('/ingredient/date').get((request,response)=>{
+router.route('/ingredient/date').post((request,response)=>{
     
-    Db.displayIngredientDate().then(result =>{
+    let date = {... request.body}
+    Db.displayIngredientDate(date).then(result =>{
         response.json(result[0]);
     })
 })
 
-router.route('/ingredient/month').get((request,response)=>{
+router.route('/ingredient/month').post((request,response)=>{
     
-    Db.displayIngredientMonth().then(result =>{
+    let month = {... request.body}
+    Db.displayIngredientMonth(month).then(result =>{
         response.json(result[0]);
     })
 })
@@ -232,6 +240,23 @@ router.route('/meal/student').get((request,response)=>{
         response.json(result[0]);
     })
 })
+
+router.route('/meallog/date').post((request,response)=>{
+
+    let date = {... request.body}
+    Db.displayMealLogDate(date).then(result =>{
+        response.json(result);
+    })
+})
+
+// router.route('/meallog/mealprice').post((request,response)=>{
+
+//     let mealprice = {... request.body}
+//     Db.displayMealLogDate(mealprice).then(result =>{
+//         response.json(result);
+//     })
+// })
+
 
 
 

@@ -415,12 +415,12 @@ async function displayStudentsMealLog(){
     } 
 }
 
-async function displayMealLogDate(Date){  
+async function displayMealLogDate(GuestMealLog){  
     try{
         let pool = await sql.connect(config.sql);
         let mealLogDate = await pool.request()
-            .input('input_param', sql.Date, Date)
-            .query("EXEC DisplayMealLogOfDate @input_param");
+            .input("Date", sql.Date, GuestMealLog.Date)
+            .execute("DisplayMealLogOfDate");
         return mealLogDate.recordsets;
     }
     catch(error){
@@ -428,13 +428,13 @@ async function displayMealLogDate(Date){
     }    
 }
 
-async function displayMealLogDate(StudentMealLog){  //GuestMealLog or StudentMealLog?
+async function displayMealLogMealPrice(GuestMealLog){ 
     try{
         let pool = await sql.connect(config.sql);
-        let mealLogDate = await pool.request()
-            .input("Date", sql.Date, StudentMealLog.Date)
-            .execute("DisplayMealLogOfDate");
-        return mealLogDate.recordsets;
+        let mealLogMealprice = await pool.request()
+            .input("MealPrice", sql.Money, GuestMealLog.MealPrice)
+            .execute("DisplayMealLogOfMealPrice");
+        return mealLogMealprice.recordsets;
     }
     catch(error){
         console.log(error);
@@ -495,7 +495,8 @@ module.exports = {
     displayIngredientMonth : displayIngredientMonth,
     displayGuestMealLog : displayGuestMealLog,
     displayStudentsMealLog : displayStudentsMealLog,
-    displayMealLogDate : displayMealLogDate
+    displayMealLogDate : displayMealLogDate,
+    displayMealLogMealPrice : displayMealLogMealPrice
     
 
 }
