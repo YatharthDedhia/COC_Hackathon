@@ -22,6 +22,7 @@ const menu = [
         date: '22/11/2022',
         ingredients: 'Mushroom / Garlic / Veggies'
     },
+
 ];
 
 const MenuPrint = () => {

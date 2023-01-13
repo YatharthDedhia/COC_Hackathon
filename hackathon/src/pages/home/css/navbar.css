@@ -26,6 +26,7 @@ nav{
     border-bottom:0.1px solid rgb(225, 225, 225);
     justify-content:space-between;
     align-items:center;
+    width: 100%;
 }
 
 .nav-main{
