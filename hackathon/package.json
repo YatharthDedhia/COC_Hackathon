@@ -3,17 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@syncfusion/ej2-react-calendars": "^20.4.42",
+=======
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+>>>>>>> 7c3afb8a0b094ed1794be33923d55624515806fd
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.1.4",
+    "axios": "^1.2.2",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^8.4.2",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
+<<<<<<< HEAD
     "react-calendars": "^1.0.7",
+=======
+    "react-calendar-input": "^0.3.15",
+>>>>>>> 7c3afb8a0b094ed1794be33923d55624515806fd
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.42.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
     "reactjs-popup": "^2.0.5",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
