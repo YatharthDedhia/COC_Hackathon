@@ -257,7 +257,53 @@ router.route('/meallog/date').post((request,response)=>{
 //     })
 // })
 
+router.route('/meallog/mealtype').post((request,response)=>{
 
+    let mealtype = {... request.body}
+    Db.displayMealLogOfMealType(mealtype).then(result =>{
+        response.json(result);
+    })
+})
+
+router.route('/meallog/guest').post((request,response)=>{
+
+    let guest = {... request.body}
+    Db.displayMealLogSingleGuest(guest).then(result =>{
+        response.json(result[0]);
+    })
+})
+
+router.route('/meallog/student').post((request,response)=>{
+
+    let student = {... request.body}
+    Db.displayMealLogSingleMessStudent(student).then(result =>{
+        response.json(result[0]);
+    })
+})
+
+router.route('/menu/date').post((request,response)=>{
+
+    let date = {... request.body}
+    Db.displayMenuDate(date).then(result =>{
+        response.json(result[0]);
+    })
+})
+
+router.route('/menu/meal').post((request,response)=>{
+
+    let meal = {... request.body}
+    Db.displayMenuMeal(meal).then(result =>{
+        response.json(result[0]);
+    })
+})
+
+router.route('/overhead/date').post((request,response)=>{
+
+    let date = {... request.body}
+    Db.displayOverheadDate(date).then(result =>{
+        response.json(result[0]);
+    })
+})
 
 
 

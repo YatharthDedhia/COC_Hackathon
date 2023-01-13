@@ -428,25 +428,39 @@ async function displayMealLogDate(GuestMealLog){
     }    
 }
 
-async function displayMealLogMealPrice(GuestMealLog){ 
+// async function displayMealLogMealPrice(GuestMealLog){ //NOT NEEDED since price is already fixed
+//     try{
+//         let pool = await sql.connect(config.sql);
+//         let mealLogMealprice = await pool.request()
+//             .input("MealPrice", sql.Money, GuestMealLog.MealPrice)
+//             .execute("DisplayMealLogOfMealPrice");
+//         return mealLogMealprice.recordsets;
+//     }
+//     catch(error){
+//         console.log(error);
+//     }    
+// }
+
+async function displayMealLogOfMealType(GuestMealLog){ 
     try{
         let pool = await sql.connect(config.sql);
-        let mealLogMealprice = await pool.request()
-            .input("MealPrice", sql.Money, GuestMealLog.MealPrice)
-            .execute("DisplayMealLogOfMealPrice");
-        return mealLogMealprice.recordsets;
+        let mealLogMealType = await pool.request()
+            .input("MealType", sql.VarChar(8000), GuestMealLog.MealType)
+            .execute("DisplayMealLogOfMealType");
+        return mealLogMealType.recordsets;
     }
     catch(error){
         console.log(error);
     }    
 }
 
-async function displayMealLogDate1(StudentMealLog){  //GuestMealLog or StudentMealLog?
+async function displayMealLogSingleGuest(GuestMealLog){  
     try{
         let pool = await sql.connect(config.sql);
         let mealLogDate = await pool.request()
-            .input("Date", sql.Date, StudentMealLog.Date)
-            .execute("DisplayMealLogOfDate");
+            .input("GuestFirstName", sql.VarChar(8000), GuestMealLog.GuestFirstName)
+            .input("GuestLastName", sql.VarChar(8000), GuestMealLog.GuestLastName)
+            .execute("DisplayMealLogOfSingleGuest");
         return mealLogDate.recordsets;
     }
     catch(error){
@@ -454,13 +468,53 @@ async function displayMealLogDate1(StudentMealLog){  //GuestMealLog or StudentMe
     }    
 }
 
-async function displayMealLogDat(StudentMealLog){  //GuestMealLog or StudentMealLog?
+async function displayMealLogSingleMessStudent(StudentMealLog){  
     try{
         let pool = await sql.connect(config.sql);
-        let mealLogDate = await pool.request()
-            .input("Date", sql.Date, StudentMealLog.Date)
-            .execute("DisplayMealLogOfDate");
-        return mealLogDate.recordsets;
+        let mealLogstudent = await pool.request()
+            .input("StudentId", sql.Int, StudentMealLog.StudentId)
+            .execute("DisplayMealLogOfSingleMessStudent");
+        return mealLogstudent.recordsets;
+    }
+    catch(error){
+        console.log(error);
+    }    
+}
+
+async function displayMenuDate(Menu){  
+    try{
+        let pool = await sql.connect(config.sql);
+        let menuDate = await pool.request()
+            .input("Date", sql.Date, Menu.Date)
+            .execute("DisplayMealLogOfSingleMessStudent");
+        return menuDate.recordsets;
+    }
+    catch(error){
+        console.log(error);
+    }    
+}
+
+async function displayMenuMeal(Menu){  
+    try{
+        let pool = await sql.connect(config.sql);
+        let menuMeal = await pool.request()
+            .input("Date", sql.Date, Menu.Date)
+            .input("MealType", sql.VarChar(8000), Menu.MealType)
+            .execute("DisplayMenuMeal");
+        return menuMeal.recordsets;
+    }
+    catch(error){
+        console.log(error);
+    }    
+}
+
+async function displayOverheadDate(Overheads){  
+    try{
+        let pool = await sql.connect(config.sql);
+        let overheadsDate = await pool.request()
+            .input("Date", sql.Date, Overheads.Date)
+            .execute("DisplayOverheadDate");
+        return overheadsDate.recordsets;
     }
     catch(error){
         console.log(error);
@@ -496,7 +550,11 @@ module.exports = {
     displayGuestMealLog : displayGuestMealLog,
     displayStudentsMealLog : displayStudentsMealLog,
     displayMealLogDate : displayMealLogDate,
-    displayMealLogMealPrice : displayMealLogMealPrice
-    
+    displayMealLogOfMealType : displayMealLogOfMealType,
+    displayMealLogSingleGuest : displayMealLogSingleGuest,
+    displayMealLogSingleMessStudent : displayMealLogSingleMessStudent,
+    displayMenuDate : displayMenuDate,
+    displayMenuMeal : displayMenuMeal,
+    displayOverheadDate : displayOverheadDate
 
 }
