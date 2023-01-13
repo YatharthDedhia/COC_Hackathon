@@ -2,13 +2,15 @@ import React,{useState} from 'react';
 import {DatePicker}from 'antd';
 import moment from 'moment';
 import './css/leave.css'
+import { auto } from '@popperjs/core';
 const {RangePicker}=DatePicker;
 
 function Leave(){
     const [dates,Setdates]=useState([]);
     console.log(dates);
     return(
-    <div style={{margin:20}}>
+        <div class="coloring">
+    <div style={{marginTop:auto}}>
         {/* <h1>Enter Leave Date</h1> */}
 
         <RangePicker
@@ -17,8 +19,10 @@ function Leave(){
                 return moment(item).format('YYYY-DD-MM');
             }))
         }}
+        
             />
-            {/* <h1>hello</h1> */}
+            
+    </div>
     </div>
     );
 };
