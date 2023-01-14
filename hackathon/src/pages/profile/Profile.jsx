@@ -105,18 +105,56 @@
 //           </Form>
 //         )}
 //       </Col>
-      
+
 //     </Row>
 //   );
 // };
 
 // export default ProfileView;
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from "react";
+import {
+    BoldLink,
+    BoxContainer,
+    FormContainer,
+    Input,
+    MutedLink,
+    SubmitButton,
+} from "../landing/accountBox/common";
+import { Marginer } from "../landing/marginer";
+import { AccountContext } from "../landing/accountBox/accountContext";
+import axios from 'axios';
 import './css/profile.css'
 import './css/menubox.css'
 import './css/id.css'
 
 const Profile_Block = () => {
+    const [ID, setID] = useState('');
+    const [password, setPassword] = useState('');
+    const [balance, setBalance] = useState(0);
+    const [block, setBlock] = useState('');
+	const [room, setRoom] = useState('');
+    const [guest, setGuest] = useState('');
+    const [noofMeals, setnoofMeals] = useState('');
+    const [contact, setContact] = useState('');
+	const [branch, setBranch] = useState('');
+    const [messID, setmessID] = useState('');
+    
+    const url = "http://viveksem3apiv4.azurewebsites.net/api/studentsinfo";
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => {
+                console.log(response.data[0][1].RoomNo);
+                setRoom(response.data[0][1].RoomNo);
+                setBalance(response.data[0][1].Balance);
+                setGuest(response.data[0][1].NumberOfGuestVisits);
+                setnoofMeals(response.data[0][1].TotalNoOfMeals);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
     return (
         <div class="profile block">
             <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
@@ -126,10 +164,10 @@ const Profile_Block = () => {
             <h1 class="user-name">Manav Shah</h1>
             <ul class="profile-options horizontal-list">
                 <div class="display-content">
-                    <div class="credentials">Room No : </div>
-                    <div class="credentials">Balance : </div>
-                    <div class="credentials">No. of guests : </div>
-                    <div class="credentials">No. of Meal : </div>
+                    <div class="credentials" onChange={(e) => setRoom(e.target.value) }>Room No : {room} </div>
+                    <div class="credentials" onChange={(e) => setBalance(e.target.value) }>Balance : {balance}</div>
+                    <div class="credentials" onChange={(e) => setGuest(e.target.value) }>Guests : {guest}</div>
+                    <div class="credentials" onChange={(e) => setnoofMeals(e.target.value) }>No.of Meals : {noofMeals}</div>
                 </div>
             </ul>
         </div>
@@ -137,6 +175,33 @@ const Profile_Block = () => {
 };
 
 const Id = () => {
+    const [ID, setID] = useState('');
+    const [password, setPassword] = useState('');
+    const [balance, setBalance] = useState(0);
+    const [block, setBlock] = useState('');
+	const [room, setRoom] = useState('');
+    const [guest, setGuest] = useState('');
+    const [noofMeals, setnoofMeals] = useState('');
+    const [contact, setContact] = useState('');
+	const [branch, setBranch] = useState('');
+    const [messID, setmessID] = useState('');
+
+    const url = "http://viveksem3apiv4.azurewebsites.net/api/studentsinfo";
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => {
+                // console.log(response.data[0][1].RoomNo);
+                setRoom(response.data[0][1].RoomNo);
+                setContact(response.data[0][1].MobileNo);
+                setBranch(response.data[0][1].Branch);
+                setmessID(response.data[0][1].StudentId);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
     return (
         <div className='id-body'>
             <div class="card">
@@ -147,17 +212,14 @@ const Id = () => {
                     <div class="detail">
                         <h2>Manav Shah<br /></h2>
                         <ul class="sci">
-                            <li class='credentials'>
-                                Contact No.: 76832924
+                            <li class='credentials'onChange={(e) => setContact(e.target.value) } >Contact No : {contact} 
                             </li>
-                            <li class='credentials'>
-                                Room No.: 55
+                            <li class='credentials'onChange={(e) => setRoom(e.target.value) } >Room No : {room} 
+                                
                             </li>
-                            <li class='credentials'>
-                                Branch: CE
+                            <li class='credentials'onChange={(e) => setBranch(e.target.value) } >Branch : {branch}
                             </li>
-                            <li class='credentials'>
-                                Mess ID No: 66
+                            <li class='credentials'onChange={(e) => setmessID(e.target.value) } >Mess Id No : {messID}
                             </li>
                         </ul>
                     </div>

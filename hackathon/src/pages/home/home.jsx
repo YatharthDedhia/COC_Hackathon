@@ -55,7 +55,7 @@ const MenuPrint = () => {
     const [food, setFood] = useState('');
 
     return (
-        food.length.map((food) => (
+        // food.length.map((food) => (
             <div class="col-3-mon-1">
                 <div class="menu-list-1">
                     <div class="dish-name">
@@ -66,7 +66,7 @@ const MenuPrint = () => {
                     </div>
                 </div>
             </div>
-        ))
+        // ))
     )
 }
 
