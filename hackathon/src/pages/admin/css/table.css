@@ -1,7 +1,7 @@
 
 
 tbody{
-  background-color: #ECE9E9;
+  background-color: white;
 }
 
 th,
@@ -12,17 +12,17 @@ td {
 
 .Admintable {
   position: relative;
-  border-color: #545b5e;
+  /* border-color: #545b5e; */
   top: -500px;
   width: 1000px;
-  background-color: red;
+  background-color: #ffcc00;
   border-radius: 5px;
 }
 .Admintable1 {
   position: relative;
-  border-color: #545b5e;
+  /* border-color: #545b5e; */
   top: -250px;
   width: 1000px;
-  background-color: red;
+  background-color: #ffcc00;
   border-radius: 5px;
 }

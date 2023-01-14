@@ -1,23 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
-
-.meals-body{
-    height: 100%;
-    font-family: 'Noto Sans', sans-serif;
-    background-color: #ec576b;
-}
-
-
 .contact_form {
     width: 450px;
+    position: relative;
     height: auto;
     margin: 80px auto;
     border-radius: 10px;
     text-align: left;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 20px;
     background-color: #fbfbfb;
     padding-left: 30px;
+    top: -50px;
 }
 
 
@@ -28,7 +22,7 @@ input {
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
-    border-color: #ec576b;
+    border-color: #ffcc00;
     margin-top: 10px;
     padding-left: 10px;
     margin-bottom: 20px;
@@ -42,7 +36,7 @@ textarea {
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
-    border-color: #ec576b;
+    border-color: #ffcc00;
     margin-top: 10px;
     padding-left: 10px;
     margin-bottom: 20px;
@@ -63,8 +57,8 @@ button {
     margin-bottom: 20px;
     margin-top: 10px;
     text-transform: uppercase;
-    background-color: #ec576b;
-    border-color: #ec576b;
+    background-color: #ffcc00;
+    border-color: #ffcc00;
     border-style: solid;
     border-radius: 10px;
     width: 420px;
@@ -78,7 +72,7 @@ button p {
 
 
 span {
-    color: #ec576b;
+    color: #ffcc00;
 }
 
 
@@ -92,7 +86,7 @@ h1 {
     font-size: 35px;
     text-align: center;
     padding-bottom: 20px;
-    color: #ec576b;
+    color: #ffcc00;
     position:relative;
     right:6px;
     justify-content: center;

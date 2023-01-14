@@ -54,18 +54,18 @@ const MenuPrint = () => {
     const [food, setFood] = useState('');
 
     return (
-        // food.map(function (item, i) {
+        // food.length.map((food) => (
             <div class="col-3-mon-1">
                 <div class="menu-list-1">
                     <div class="dish-name">
                         <p>{fooddate}</p>
                         <p>{foodtype}</p>
-                        <h4>{fooditem}</h4>
+                        <h2>{fooditem}</h2>
                         <p className='ingredients'>{fooding}</p>
                     </div>
                 </div>
             </div>
-        // })
+        // ))
     )
 }
 

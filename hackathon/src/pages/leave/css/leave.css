@@ -1,3 +1,6 @@
-.coloring{
-    background-color: #9099b7;
+.ant-picker{
+    position: relative;
+    top: 250px;
+    width: 500px;
+    height: 200px;
 }

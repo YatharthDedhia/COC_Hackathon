@@ -1,4 +1,4 @@
-// import './Guest.css'
+import './Guest.css'
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -52,7 +52,7 @@ const Guest = () => {
 	return (
 		<div className="form">
 			<div>
-				<h1>Add Guest</h1>
+				<h1 className='guest-h1'>Add Guest</h1>
 			</div>
 
 			<form>
@@ -76,7 +76,7 @@ const Guest = () => {
 				<input onChange={handleMobile} className="input"
 					value={mobile} type="number" />
 
-				<button onClick={handleSubmit} className="btn" type="submit">
+				<button onClick={handleSubmit} className="guest-btn" type="submit">
 					Add a Guest
 				</button>
 			</form>

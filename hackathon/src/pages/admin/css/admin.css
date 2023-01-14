@@ -1,6 +1,13 @@
 .deduct{
     position: relative;
-    right: 250px;
+    right: 300px;
+    top: -5px;
     width: 150px;
-    
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    height: 30px;
+    font-size:15px;
+    font-weight: 100px;
+    margin: 5px;
+    justify-content: center;
 }

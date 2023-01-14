@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import date from 'date-and-time';
+// import date from 'date-and-time';
 import './css/navbar.css';
 import './css/table.css';
 import './css/admin.css';
@@ -204,9 +204,7 @@ const Admin = () => {
                             </ul>
                         </li>
                         <button className='deduct' onClick={Deduct}>test</button>
-
-                        {/* <li class="nav-link decision"><a href="/guest">Decide Menu</a></li> */}
-                        <li class="nav-link-admin"><a href="/leave">LogOut</a></li>
+                        <li class="nav-link-admin"><a href="/landing">LogOut</a></li>
                     </ul>
                 </div>
             </nav>
