@@ -30,15 +30,14 @@ const menu = [
 ];
 
 const MenuPrint = () => {
-
+    // e.preventDefault();
     useEffect(() => {
         axios
             .get(url)
             .then((response) => {
-
                 setFood(response.data[0])
                 console.log(food)
-                setFoodDate(response.data[0][0].Date)
+                setFoodDate(response.data[0][0].Date.slice(0,10))
                 setFoodIng(response.data[0][0].Ingredients)
                 setFoodItem(response.data[0][0].ItemName)
                 setFoodType(response.data[0][0].MealType)
@@ -46,7 +45,7 @@ const MenuPrint = () => {
             .catch((err) => {
                 console.log(err);
             });
-    })
+    },[]);
 
     const [fooddate, setFoodDate] = useState('');
     const [foodtype, setFoodType] = useState('');
