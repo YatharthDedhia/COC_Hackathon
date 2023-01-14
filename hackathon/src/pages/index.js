@@ -3,6 +3,7 @@ export { default as Home } from './home/home';
 export { default as Profile } from './profile/Profile';
 export { default as Leave } from './leave/leave';
 export { default as Guest } from './guest/guest';
+export { default as Log} from './Log/log';
 export { default as Landing } from './landing/landing';
 export { default as Admin } from './admin/admin';
 export { default as Breakfast } from './breakfast/breakfast';

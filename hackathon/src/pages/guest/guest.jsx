@@ -1,103 +1,86 @@
-import './Guest.css'
+// import './Guest.css'
 import { useState } from 'react';
+import axios from 'axios';
 
-const Guest= () =>{
+const url = "https://viveksem3apiv4.azurewebsites.net/api/guestinfo"
 
-// States for registration
-const [name, setName] = useState('');
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const Guest = () => {
 
-// States for checking the errors
-const [submitted, setSubmitted] = useState(false);
-const [error, setError] = useState(false);
+	// States for registration
+	const [firstname, setFirstName] = useState('');
+	const [lastname, setLastName] = useState('');
+	const [age, setAge] = useState(0);
+	const [id, setId] = useState('');
+	const [mobile, setMobileNo] = useState('');
 
-// Handling the name change
-const handleName = (e) => {
-	setName(e.target.value);
-	setSubmitted(false);
-};
+	// Handling the name change
+	const handleFirstName = (e) => {
+		setFirstName(e.target.value);
+	};
 
-// Handling the email change
-const handleEmail = (e) => {
-	setEmail(e.target.value);
-	setSubmitted(false);
-};
+	// Handling the email change
+	const handleLastName = (e) => {
+		setLastName(e.target.value);
+	};
 
-// Handling the password change
-const handlePassword = (e) => {
-	setPassword(e.target.value);
-	setSubmitted(false);
-};
+	// Handling the password change
+	const handleAge = (e) => {
+		setAge(e.target.value);
+	};
 
-// Handling the form submission
-const handleSubmit = (e) => {
-	e.preventDefault();
-	if (name === '' || email === '' || password === '') {
-	setError(true);
-	} else {
-	setSubmitted(true);
-	setError(false);
-	}
-};
+	const handleMobile = (e) => {
+		setMobileNo(e.target.value);
+	};
 
-// Showing success message
-const successMessage = () => {
+	const handleStudentId = (e) => {
+		setId(e.target.value);
+	};
+
+	// // Handling the form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const sendData = {
+			"StudentId": String({ id }),
+			"GuestFirstName": String({ firstname }),
+			"GuestLastName": String({ lastname }),
+			"Age": { age },
+			"MobileNo": { mobile },
+		}
+		axios.post(url, sendData).then(result => { console.log(result.data) });
+	};
+
 	return (
-	<div
-		className="success"
-		style={{
-		display: submitted ? '' : 'none',
-		}}>
-		<h1>User {name} successfully registered!!</h1>
-	</div>
+		<div className="form">
+			<div>
+				<h1>Add Guest</h1>
+			</div>
+
+			<form>
+				<label className="label">StudentID</label>
+				<input onChange={handleStudentId} className="input"
+					value={id} type="number" />
+
+				<label className="label">First Name</label>
+				<input onChange={handleFirstName} className="input"
+					value={firstname} type="text" />
+
+				<label className="label">Last Name</label>
+				<input onChange={handleLastName} className="input"
+					value={lastname} type="text" />
+
+				<label className="label">Age</label>
+				<input onChange={handleAge} className="input"
+					value={age} type="number" />
+
+				<label className="label">Mobile No</label>
+				<input onChange={handleMobile} className="input"
+					value={mobile} type="number" />
+
+				<button onClick={handleSubmit} className="btn" type="submit">
+					Add a Guest
+				</button>
+			</form>
+		</div>
 	);
-};
-
-// Showing error message if error is true
-const errorMessage = () => {
-	return (
-	<div
-		className="error"
-		style={{
-		display: error ? '' : 'none',
-		}}>
-		<h1>Please enter all the fields</h1>
-	</div>
-	);
-};
-
-return (
-	<div className="form">
-	<div>
-		<h1>Guest Registration</h1>
-	</div>
-
-	{/* Calling to the methods */}
-	<div className="messages">
-		{errorMessage()}
-		{successMessage()}
-	</div>
-
-	<form>
-		{/* Labels and inputs for form data */}
-		<label className="label">Firstname</label>
-		<input onChange={handleName} className="input"
-		value={name} type="text" />
-
-		<label className="label">Lastname</label>
-		<input onChange={handleEmail} className="input"
-		value={email} type="text" />
-
-		<label className="label">Phonenumber</label>
-		<input onChange={handlePassword} className="input"
-		value={password} type="number" />
-
-		<button onClick={handleSubmit} className="btn" type="submit">
-		Add a Guest
-		</button>
-	</form>
-	</div>
-);
 }
 export default Guest;

@@ -6,21 +6,23 @@ tbody{
 
 th,
 td {
-  /* cell */
   padding: 0.75rem;
   font-size: 0.9375rem;
-}
-
-td {
-  /* body cell */
-  /* color: #7E7F9A; */
 }
 
 .Admintable {
   position: relative;
   border-color: #545b5e;
   top: -500px;
-  width: 500px;
+  width: 1000px;
+  background-color: red;
+  border-radius: 5px;
+}
+.Admintable1 {
+  position: relative;
+  border-color: #545b5e;
+  top: -250px;
+  width: 1000px;
   background-color: red;
   border-radius: 5px;
 }

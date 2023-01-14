@@ -10,6 +10,7 @@ import {
   Lunch,
   Breakfast,
   Dinner,
+  Log
 } from './pages'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -34,6 +35,7 @@ const App = () => {
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/leave" element={<Leave />} />
           <Route exact path="/guest" element={<Guest />} />
+          <Route exact path="/log" element={<Log />} />
           <Route exact path="/landing" element={<AppContainer><AccountBox /></AppContainer>} />
           <Route exact path="/admin" element={<Admin />} />
           <Route exact path="/breakfast" element={<Breakfast />} />

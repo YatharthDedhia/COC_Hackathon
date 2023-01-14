@@ -52,10 +52,10 @@ nav-admin {
 
 .nav-links-admin {
     display: flex;
-    gap: 80px;
+    gap: 0px;
     list-style: none;
     position: relative;
-    left: 1050px;
+    left: 950px;
 }
 
 a-admin {

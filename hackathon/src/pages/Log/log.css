@@ -1,12 +1,4 @@
-/* .App {
-    text-align: center;
-    background-color:#1b082c;
-    position:relative;
-    top: 200px;
 
-    } */
-    /* html{background-color: #1b082c;} */
-    
     
     .label{
     display: block;
@@ -23,19 +15,12 @@
     }
     .btn{
     color: white;
-    background-color: rgb(152, 19, 19);
+    background-color: red;
     border-radius: 5px;
     font-size: larger;
     display: block;
     padding: 5px;
     margin: 10px auto;
-    position:relative;
-    top:20px;
-    }
-
-
-    h1{
-        color:rgb(152, 19, 19)
     }
     
     .messages{
@@ -59,4 +44,5 @@
     width: fit-content;
     height: 50px;
     padding: 5px;
-    }  
+    }
+    
