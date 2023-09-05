@@ -57,23 +57,23 @@ const Guest = () => {
 
 			<form>
 				<label className="label">StudentID</label>
-				<input onChange={handleStudentId} className="input"
+				<input onChange={handleStudentId} placeholder="Hostelite's Registration ID" className="input"
 					value={id} type="number" />
 
 				<label className="label">First Name</label>
-				<input onChange={handleFirstName} className="input"
+				<input onChange={handleFirstName} placeholder="First Name" className="input"
 					value={firstname} type="text" />
 
 				<label className="label">Last Name</label>
-				<input onChange={handleLastName} className="input"
+				<input onChange={handleLastName} placeholder="Last Name" className="input"
 					value={lastname} type="text" />
 
 				<label className="label">Age</label>
-				<input onChange={handleAge} className="input"
+				<input onChange={handleAge} placeholder="Age"className="input"
 					value={age} type="number" />
 
 				<label className="label">Mobile No</label>
-				<input onChange={handleMobile} className="input"
+				<input onChange={handleMobile} placeholder="Contact No." className="input"
 					value={mobile} type="number" />
 
 				<button onClick={handleSubmit} className="guest-btn" type="submit">

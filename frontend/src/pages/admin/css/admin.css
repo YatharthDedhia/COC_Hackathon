@@ -11,3 +11,8 @@
     margin: 5px;
     justify-content: center;
 }
+.content{
+    position : absolute;
+    top:120px;
+    left:40px;
+}

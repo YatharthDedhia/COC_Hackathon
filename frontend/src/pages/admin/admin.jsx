@@ -34,11 +34,12 @@ const url3 = "https://viveksem3apiv4.azurewebsites.net/api/deduct";
 
 const Table = () => {
     const [studentId, setstudentId] = useState('');
-    const [studentFirstName, setstudentFirstName] = useState('');
-    const [studentLastName, setstudentLastName] = useState('');
-    const [date, setdate] = useState('');
-    const [mealType, setmealType] = useState('');
-    const [mealPrice, setmealPrice] = useState('');
+    const [studentFirstName, setstudentFirstName] = useState('Yash');
+    const [studentLastName, setstudentLastName] = useState('Singavi');
+    const [date, setdate] = useState('7th September');
+    const [mealType, setmealType] = useState('Breakfast');
+    const [mealPrice, setmealPrice] = useState('100');
+    
 
     useEffect(() => {
         axios
@@ -75,13 +76,48 @@ const Table = () => {
                             return */}
                     <tbody>
                         <tr>
-
                             <td>{studentFirstName + " " + studentLastName}</td>
                             <td>{date}</td>
                             <td>
                                 {mealType}
                             </td>
                             <td>{mealPrice}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{"Yatharth Dedhia"}</td>
+                            <td>{"9th September"}</td>
+                            <td>
+                                {"Lunch"}
+                            </td>
+                            <td>{300}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{"Vishwesh Sinha"}</td>
+                            <td>{"8th September"}</td>
+                            <td>
+                                {"Dinner"}
+                            </td>
+                            <td>{250}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{"Ramesh Bidkar"}</td>
+                            <td>{"10th September"}</td>
+                            <td>
+                                {"Dinner"}
+                            </td>
+                            <td>{350}</td>
+                        </tr>
+
+                        <tr>
+                            <td>{"Athrava Jadhav"}</td>
+                            <td>{"11th September"}</td>
+                            <td>
+                                {"Lunch"}
+                            </td>
+                            <td>{250}</td>
                         </tr>
                     </tbody>
                     {/* } */}
@@ -121,7 +157,7 @@ const Table1 = () => {
     return (
         <div className="content">
             <p>
-                <table className='Admintable1'>
+                {/* <table className='Admintable1'>
                     <thead>
                         <tr>
                             <th>Student</th>
@@ -129,11 +165,11 @@ const Table1 = () => {
                             <th>Meal Type</th>
                             <th>Meal Price</th>
                         </tr>
-                    </thead>
+                    </thead> */}
                     {/* {mockTests.map((test) => {
                         if (test.status == "unattempted") {
                             return */}
-                    <tbody>
+                    {/* <tbody>
                         <tr>
 
                             <td>{GuestFirstName + " " + GuestLastName}</td>
@@ -143,10 +179,10 @@ const Table1 = () => {
                             </td>
                             <td>{mealPrice}</td>
                         </tr>
-                    </tbody>
+                    </tbody> */}
                     {/* } */}
                     {/* // })} */}
-                </table>
+                {/* </table> */}
             </p>
         </div>
     )
@@ -165,7 +201,7 @@ function Deduct() {
     console.log(sendData);
     axios.post(url1, sendData).then(result => { setBool(result.data) });
 
-    if (Bool == 1) {
+    if (Bool === 1) {
         axios
             .get(url2)
             .then((response) => {

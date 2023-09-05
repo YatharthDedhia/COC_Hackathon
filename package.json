@@ -1,7 +1,7 @@
 {
   "name": "coc_hackathon",
   "version": "1.0.0",
-  "description": "",
+  "description": "# This is a project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/YatharthDedhia/COC_Hackathon.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yash Singavi",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
